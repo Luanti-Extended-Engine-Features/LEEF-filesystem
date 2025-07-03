@@ -3,16 +3,22 @@
 -- This is apart of the [LEEF-filesystem](https://github.com/Luanti-Extended-Engine-Features/LEEF-filesystem) module.
 -- @module paths
 
-local media_foldernames = {"textures", "sounds", "media", "models", "locale"}
-local media_extensions = {
+local media_foldernames = {"textures", "sounds", "media", "models", "locale", "fonts", "vectors", "data"}
+local media_extensions = { -- [textures, sounds, media, models, locale, fonts](https://api.luanti.org/mods/#textures-sounds-media-models-locale-fonts)
 	-- Textures
-	"png", "jpg", "bmp", "tga", "pcx", "ppm", "psd", "wal", "rgb";
+	"png", "jpg", "tga", "bmp", "pcx", "ppm", "psd", "wal", "rgb";
 	-- Sounds
-	"ogg";
+	"ogg", "wav", "mp3";
 	-- Models
-	"x", "b3d", "md2", "obj", "gltf";
+	"x", "b3d", "obj", "gltf", "glb", "md2";
 	-- Translations
-	"tr";
+	"tr", "po", "pot";
+	-- Fonts
+	"ttf", "otf", "eot", "woff";
+	-- Vectors
+	"svg", "ai";
+	-- MultiCraft: Encrypted
+	"e"; -- Why fucking not? :trollface:
 }
 local function split_extension(filename)
 	return filename:match"^(.*)%.(.*)$"
